@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 
 import Cards from "./Components/Cards/Cards";
+import LoadingSpinner from "./Components/LoadingSpinner/LoadingSpinner";
 
 // fetch data
 const fetchData = async ()=>{
@@ -23,7 +24,7 @@ const App = () => {
     <>
       <Navbar />
 
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<LoadingSpinner></LoadingSpinner>}>
       <Cards cardPromise={cardPromise}></Cards>
       </Suspense>
 
